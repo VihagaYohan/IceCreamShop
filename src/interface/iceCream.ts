@@ -1,8 +1,11 @@
+import Flavors from "../models/flavors";
+import Toppings from "../models/toppings";
+
 export default interface IceCream {
   getDescription(): string;
   cost(): number;
-  getFlavor(): string | null;
-  getToppings(): string[];
-  setFlavor(flavor: string): void;
-  addTopping(topping: string): any;
+  getFlavor(): Flavors[] | null;
+  getToppings(): Toppings[] | null;
+  setFlavor(flavor: Flavors): void;
+  addTopping(topping: Toppings): void;
 }

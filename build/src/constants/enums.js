@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaymentMethod = exports.OrderStatus = void 0;
 var OrderStatus;
 (function (OrderStatus) {
+    OrderStatus["Pending"] = "Pending";
     OrderStatus["Place"] = "Order Placed";
     OrderStatus["Preparation"] = "In preparation";
     OrderStatus["Delivery"] = "Out for delivery";

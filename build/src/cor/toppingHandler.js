@@ -9,8 +9,8 @@ class ToppingHandler {
         this.next = next;
     }
     handleRequest(iceCream) {
-        if (iceCream.getToppings().length === 0) {
-            console.log(messages_1.default.message.emptyToppings);
+        if (iceCream.getToppings() === null) {
+            console.log(messages_1.default.message.emptyToppings); // select at least 1 topping
         }
         else if (this.next != undefined) {
             this.next.handleRequest(iceCream);

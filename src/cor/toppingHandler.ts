@@ -10,8 +10,8 @@ export default class ToppingHandler implements IceCreamHandler {
   }
 
   handleRequest(iceCream: IceCream): void {
-    if (iceCream.getToppings().length === 0) {
-      console.log(messages.message.emptyToppings);
+    if (iceCream.getToppings() === null) {
+      console.log(messages.message.emptyToppings); // select at least 1 topping
     } else if (this.next != undefined) {
       this.next.handleRequest(iceCream);
     }

@@ -1,11 +1,13 @@
 import IceCream from "../interface/iceCream";
+import Flavors from "./flavors";
+import Toppings from "./toppings";
 
 export default class BasicIcecream implements IceCream {
-  private flavor: string | undefined;
-  private toppings: string[] = [];
+  private flavor: Flavors[] = []; // string | undefined;
+  private toppings: Toppings[] = [];
 
   getDescription(): string {
-    if (this.toppings.length === 0) {
+    if (this.toppings.length >= 1) {
       return `Ice-cream with ${this.flavor} 
         with toppings ${this.toppings.map((item) => {
           return item;
@@ -15,18 +17,20 @@ export default class BasicIcecream implements IceCream {
     }
   }
   cost(): number {
-    throw new Error("Method not implemented.");
+    return 10;
   }
-  getFlavor(): string | null {
-    return this.flavor !== undefined ? this.flavor : "no flavor selected";
+  getFlavor(): Flavors[] | [] {
+    // return this.flavor !== undefined ? this.flavor : "no flavor selected";
+    return this.flavor !== undefined ? this.flavor : [];
   }
-  getToppings(): string[] {
-    return this.toppings;
+  getToppings(): Toppings[] {
+    return this.toppings !== undefined ? this.toppings : [];
   }
-  setFlavor(flavor: string): void {
-    this.flavor = flavor;
+  setFlavor(flavor: Flavors): void {
+    // this.flavor = flavor;
+    this.flavor.push(flavor);
   }
-  addTopping(topping: string) {
+  addTopping(topping: Toppings): void {
     this.toppings.push(topping);
   }
 }

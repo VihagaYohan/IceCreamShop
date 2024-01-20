@@ -9,3 +9,4 @@ class PlaceOrderCommand {
         this.order.setState(enums_1.OrderStatus.Place);
     }
 }
+exports.default = PlaceOrderCommand;
